@@ -74,6 +74,7 @@ def updateScore(p1, b):
         p1.increaseScore()
     elif b.rect[0] > 0 and p1.x == 0:
         p1.increaseScore()
+    
 def displayWinningScreen(win, winner):
     win.fill((0, 0, 0))
     font_large = pygame.font.Font(None, 72)
@@ -164,11 +165,9 @@ def main():
                 network.send()
                 network.close()
 
-        
         #checking for winner
         if (checkWinner(p1, p2)):
             break
-
 
         # Handling input
         handleInput(p1)
