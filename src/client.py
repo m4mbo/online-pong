@@ -86,7 +86,7 @@ def displayWinningScreen(win, winner):
 
 def checkWinner(p1,p2):
         # Checking if any player reached 25 points
-    if p1.score >= 25:
+    if p1.score >= 15:
             if p1.x == 0: 
                 winner = "Left"
             else:
@@ -94,7 +94,7 @@ def checkWinner(p1,p2):
             displayWinningScreen(win, winner)
             run = False
             return True
-    if p2.score >= 25:
+    if p2.score >= 15:
             if p2.x == 0: 
                 winner = "Left"
             else:
