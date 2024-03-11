@@ -1,7 +1,7 @@
 import time
 from multiprocessing import Process
-from network.network import Network
-from helpers.constants import *
+from ..network.network import Network
+from ..helpers.constants import *
 
 def client_process_freq(client_id, freq):
     network = Network(PORT, 'localhost', BUFSIZE)

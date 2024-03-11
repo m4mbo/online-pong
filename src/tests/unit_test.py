@@ -1,9 +1,9 @@
 import unittest
 from unittest.mock import patch
-from network.reed_solomon import ReedSolomon
-from client import interpolateBalls
-from objects.ball import Ball
-from helpers.constants import *
+from ..network.reed_solomon import ReedSolomon
+from ..client import interpolateBalls
+from ..objects.ball import Ball
+from ..helpers.constants import *
 
 class UnitTest(unittest.TestCase):
     def test_reed_solo(self):
