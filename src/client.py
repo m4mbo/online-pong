@@ -74,7 +74,7 @@ def updateScore(p1, b):
         p1.increaseScore()
     elif b.rect[0] > 0 and p1.x == 0:
         p1.increaseScore()
-    
+
 def displayWinningScreen(win, winner):
     win.fill((0, 0, 0))
     font_large = pygame.font.Font(None, 72)
@@ -87,22 +87,22 @@ def displayWinningScreen(win, winner):
 
 def checkWinner(p1,p2):
         # Checking if any player reached 25 points
-    if p1.score >= 25:
-            if p1.x == 0: 
-                winner = "Left"
-            else:
-                winner = "Right"
-            displayWinningScreen(win, winner)
-            run = False
-            return True
-    if p2.score >= 25:
-            if p2.x == 0: 
-                winner = "Left"
-            else:
-                winner = "Right"
-            displayWinningScreen(win, winner)
-            run = False
-            return True
+    if p1.score >= 15:
+        if p1.x == 0: 
+            winner = "Left"
+        else:
+            winner = "Right"
+        displayWinningScreen(win, winner)
+        run = False
+        return True
+    if p2.score >= 15:
+        if p2.x == 0: 
+            winner = "Left"
+        else:
+            winner = "Right"
+        displayWinningScreen(win, winner)
+        run = False
+        return True
     
     return False
 
@@ -165,9 +165,11 @@ def main():
                 network.send()
                 network.close()
 
+        
         #checking for winner
         if (checkWinner(p1, p2)):
             break
+
 
         # Handling input
         handleInput(p1)

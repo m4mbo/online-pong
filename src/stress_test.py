@@ -1,7 +1,7 @@
 import time
 from multiprocessing import Process
-from ..network.network import Network
-from ..helpers.constants import *
+from network.network import Network
+from helpers.constants import *
 
 def client_process_freq(client_id, freq):
     network = Network(PORT, 'localhost', BUFSIZE)
@@ -51,7 +51,7 @@ def test(type):
         # Start multiple client processes
 
         if type == "noise":
-            p = Process(target=client_process_noise, args=(0, 6))
+            p = Process(target=client_process_noise, args=(0, 5))
             processes.append(p)
             p.start()
             time.sleep(0.1)
@@ -70,4 +70,4 @@ def test(type):
             p.join()
 
 if __name__ == '__main__':
-    test("none")
+    test("noise")
