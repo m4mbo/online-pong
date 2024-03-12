@@ -93,7 +93,6 @@ def checkWinner(p1,p2):
         else:
             winner = "Right"
         displayWinningScreen(win, winner)
-        run = False
         return True
     if p2.score >= 15:
         if p2.x == 0: 
@@ -101,9 +100,8 @@ def checkWinner(p1,p2):
         else:
             winner = "Right"
         displayWinningScreen(win, winner)
-        run = False
         return True
-    
+
     return False
 
 def main():
